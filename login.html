@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="hero">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" id="login-toggle" onclick="login()">Entrar</button>
+                <button type="button" class="toggle-btn" id="register-toggle" style="color: #707070" onclick="register()">Criar Conta</button>
+            </div>
+            <form action="/login" method="post" id="login" class="input-group">
+                <input type="text" name="email" class="input-field" placeholder="Email" required>
+                <input type="password" name="password" class="input-field" placeholder="Senha" required>
+                <input type="checkbox" class="check-box-login"><span id="remember">Lembrar de mim</span>
+                <button type="submit" class="submit-btn">Entrar</button>
+            </form>
+            <form action="/register" method="post" id="register" class="input-group">
+                <div class="input-container">
+                    <input type="text" name="email" id="email-box" class="input-field" placeholder="Email" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="password" class="input-field" placeholder="Senha" required>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="confirmation" class="input-field" placeholder="Confirme a senha" required>
+                </div>
+                <input type="checkbox" class="check-box-signup"><span id="terms">Concordo com os termos e condições</span>
+                <button type="submit" class="submit-btn">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        var a = document.getElementById("login-toggle");
+        var b = document.getElementById("register-toggle");
+
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+
+        function register() {
+            a.style.color = "#707070";
+            b.style.color = "white";
+
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+
+        }
+
+        function login() {
+            a.style.color = "white";
+            b.style.color = "#707070";
+
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
+        }
+
+        {{register}}
+
+        document.querySelectorAll('.input-container[data-error] .input-field').forEach(inpEl => {
+            inpEl.addEventListener('input', () => inpEl.parentElement.removeAttribute('data-error'));
+        });
+    </script>
+{% endblock %}
