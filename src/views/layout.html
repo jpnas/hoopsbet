@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="/static/favicon.ico" rel="icon">
+        <link href="../../public/styles/main.css" rel="stylesheet">
+        <title>Hoopsbet</title>
+    </head>
+    <body>
+        <header>
+
+            <a href="/" class="logo">
+                <img src="images/logo.png" align="middle" class="logo"/>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="games.html">Jogos</a></li>
+                    <li><a href="picks.html">Escolhas</a></li>
+                    <li><a href="betmanager.html">BetManager</a></li>
+                </ul>
+            </nav>
+            {% if session.user_id %}
+            <form action="/logout" method="GET">
+                <button type="submit" class="btn btn-dark" id="login">Sair</button>
+            </form>
+            {% else %}
+            <form action="/register" method="GET">
+                <button type="submit" class="btn btn-secondary" id="signup-btn">Criar Conta</button>
+            </form>
+            <form action="/login" method="GET">
+                <button type="submit" class="btn btn-dark" id="login-btn">Entrar</button>
+            </form>
+            {% endif %}
+
+        </header>
+        <main id="content">
+        {% block main %}{% endblock %}
+        </main>
+    </body>
+</html>
