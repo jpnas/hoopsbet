@@ -12,7 +12,7 @@ function pageLayout(req, res) {
 
 const express = require('express')
 const server = express()
-const path = require("path")
+const path = require('path')
 
 const nunjucks = require('nunjucks')
 nunjucks.configure('src/views', {

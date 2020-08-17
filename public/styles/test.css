@@ -59,73 +59,37 @@ header img.logo {
     position: absolute;
     top: 0;
     left: 0;
-    margin-left: .5rem;
+    margin-left: 5vw;
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-/* burger button */
-
-.menu-btn {
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 4.5px;
+    width: 2em;
+    border-radius: 2px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    cursor: pointer;
-    transition: all .5s ease-in-out;
 }
 
-.menu-btn_burger {
-    width: 2.6rem;
-    height: 5px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px var(--color-primary);
-    transition: all .5s ease-in-out;
-}
-
-.menu-btn_burger::before,
-.menu-btn_burger::after {
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
     content: '';
     position: absolute;
-    left: .7rem;
-    width: 2.6rem;
-    height: 5px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px var(--color-primary);
-    transition: all .5s ease-in-out;
 }
 
-.menu-btn_burger::before {
-    transform: translateY(-12px);
+.nav-toggle-label span::before {
+    bottom: 9px;
 }
 
-.menu-btn_burger::after {    transform: translateY(11px);
+.nav-toggle-label span::after {
+    top: 9px
 }
 
-/* burger animation */
-
-.menu-btn.open .menu-btn_burger {
-    transform: translateX(-50px);
-    background: transparent;
-    box-shadow: none;
-}
-
-.menu-btn.open .menu-btn_burger::before {
-    transform: rotate(45deg) translate(35px, -35px);
-    box-shadow: none;
-}
-
-.menu-btn.open .menu-btn_burger::after {
-    transform: rotate(-45deg) translate(35px, 35px);
-    box-shadow: none;
-}
-
-/* burger button end */
 
 nav {
     position: absolute;

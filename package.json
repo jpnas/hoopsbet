@@ -1,11 +1,24 @@
 {
   "name": "hoopsbet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpnas/hoopsbet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpnas/hoopsbet/issues"
+  },
+  "homepage": "https://github.com/jpnas/hoopsbet#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "nunjucks": "^3.2.2"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
